@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerQuiz - Ultimate Quiz Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-gamepad"></i>
+                <span>Power</span>Quiz
+            </div>
+            <div class="score-display">
+                <span>Score: <span id="score">0</span></span>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Start Screen -->
+            <section id="start-screen" class="screen active">
+                <div class="start-content">
+                    <h1>Welcome to <span>Power</span>Quiz</h1>
+                    <p>Test your knowledge with our challenging questions. Are you ready?</p>
+                    <div class="settings">
+                        <div class="setting-item">
+                            <label for="category">Category:</label>
+                            <select id="category">
+                                <option value="any">Any Category</option>
+                                <!-- Categories will be populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label for="difficulty">Difficulty:</label>
+                            <select id="difficulty">
+                                <option value="any">Any Difficulty</option>
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="start-btn" class="btn pulse">Start Quiz</button>
+                </div>
+            </section>
+
+            <!-- Quiz Screen -->
+            <section id="quiz-screen" class="screen">
+                <div class="question-container">
+                    <div class="question-header">
+                        <div class="question-count">Question <span id="current-question">1</span>/<span id="total-questions">10</span></div>
+                        <div class="timer">
+                            <i class="fas fa-clock"></i>
+                            <span id="time">30</span>s
+                        </div>
+                    </div>
+                    <h2 id="question" class="question-text"></h2>
+                    <div id="options" class="options">
+                        <!-- Options will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Screen -->
+            <section id="results-screen" class="screen">
+                <div class="results-content">
+                    <h1>Quiz Completed!</h1>
+                    <div class="score-result">
+                        Your Score: <span id="final-score">0</span>
+                    </div>
+                    <div class="score-breakdown">
+                        <p>Correct Answers: <span id="correct-answers">0</span></p>
+                        <p>Incorrect Answers: <span id="incorrect-answers">0</span></p>
+                    </div>
+                    <div class="actions">
+                        <button id="restart-btn" class="btn">Play Again</button>
+                        <button id="home-btn" class="btn">Home</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with <i class="fas fa-heart"></i> | PowerQuiz © 2023</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="quiz-service.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
